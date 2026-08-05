@@ -31,10 +31,13 @@ AUTHORIZED_BOTS = {
 RATE_LIMIT_SLEEP = 0.3
 
 _HTML_COMMENT_RE = re.compile(r"<!--.*?-->", re.DOTALL)
+_HTML_COMMENT_UNTERMINATED_RE = re.compile(r"<!--.*", re.DOTALL)
 
 
 def strip_html_comments(text):
-    return _HTML_COMMENT_RE.sub("", text).strip()
+    text = _HTML_COMMENT_RE.sub("", text)
+    text = _HTML_COMMENT_UNTERMINATED_RE.sub("", text)
+    return text.strip()
 
 
 def gh_graphql(query, variables=None):
