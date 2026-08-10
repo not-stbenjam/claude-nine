@@ -88,8 +88,11 @@ def update_readme(table: str) -> None:
 def main() -> None:
     plugins = load_claude_plugins()
     codex_names = load_codex_plugin_names()
-    if set(plugins) != codex_names:
-        raise ValueError("Claude and Codex marketplace plugin lists differ")
+    # Claude-only plugins may be absent from the Codex catalog, but every
+    # Codex plugin must also be in the Claude catalog.
+    extra = codex_names - set(plugins)
+    if extra:
+        raise ValueError(f"Codex marketplace plugins missing from Claude catalog: {sorted(extra)}")
     update_readme(markdown_table(plugins))
 
 

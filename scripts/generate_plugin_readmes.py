@@ -39,6 +39,13 @@ def generated_list(plugin: Path) -> str:
 def update_readme(plugin: Path) -> bool:
     readme = plugin / "README.md"
     contents = readme.read_text()
+    if not any(plugin.glob("skills/*/SKILL.md")):
+        if START in contents or END in contents:
+            raise ValueError(
+                f"{readme.relative_to(ROOT)} has skill markers but the plugin has no skills"
+            )
+        print(f"{readme.relative_to(ROOT)} has no skills; skipped")
+        return False
     if contents.count(START) != 1 or contents.count(END) != 1:
         raise ValueError(
             f"{readme.relative_to(ROOT)} must contain exactly one skill marker pair"

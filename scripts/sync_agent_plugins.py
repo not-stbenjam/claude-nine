@@ -38,6 +38,15 @@ def write_json(path: Path, value: dict[str, Any]) -> None:
     path.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
 
 
+def codex_marketplace_names(repo_root: Path) -> set[str]:
+    marketplace = load_json(repo_root / ".agents" / "plugins" / "marketplace.json")
+    names: set[str] = set()
+    for entry in marketplace.get("plugins", []):
+        if isinstance(entry, dict) and isinstance(entry.get("name"), str):
+            names.add(entry["name"])
+    return names
+
+
 def marketplace_plugin_dirs(repo_root: Path) -> list[Path]:
     marketplace = load_json(repo_root / ".claude-plugin" / "marketplace.json")
     plugins_dir = (repo_root / "plugins").resolve()
@@ -130,11 +139,24 @@ def portable_mcp_from_claude(claude_mcp: dict[str, Any]) -> dict[str, Any]:
     return {"$schema": MCP_SCHEMA, "mcpServers": portable_servers}
 
 
-def sync_manifest(plugin_dir: Path, check: bool) -> list[str]:
+def sync_manifest(plugin_dir: Path, check: bool, codex_listed: bool) -> list[str]:
     claude_path = plugin_dir / ".claude-plugin" / "plugin.json"
     codex_path = plugin_dir / ".codex-plugin" / "plugin.json"
     portable_path = plugin_dir / "plugin.json"
     errors: list[str] = []
+
+    # Plugins absent from the Codex marketplace are Claude-only: they need
+    # just the Claude manifest and must not carry Codex/portable metadata.
+    if not codex_listed:
+        if not claude_path.is_file():
+            errors.append(f"{plugin_dir.name}: missing {claude_path}")
+        for path in (codex_path, portable_path):
+            if path.is_file():
+                errors.append(
+                    f"{plugin_dir.name}: {path} exists but plugin is not in the Codex marketplace"
+                )
+        return errors
+
     try:
         claude = load_json(claude_path) if claude_path.is_file() else None
         codex = load_json(codex_path) if codex_path.is_file() else None
@@ -204,12 +226,13 @@ def sync_mcp(plugin_dir: Path, check: bool) -> list[str]:
 def sync_agent_plugins(repo_root: Path, check: bool) -> int:
     try:
         plugin_dirs = marketplace_plugin_dirs(repo_root)
+        codex_names = codex_marketplace_names(repo_root)
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
     errors: list[str] = []
     for plugin_dir in plugin_dirs:
-        errors.extend(sync_manifest(plugin_dir, check))
+        errors.extend(sync_manifest(plugin_dir, check, plugin_dir.name in codex_names))
         errors.extend(sync_mcp(plugin_dir, check))
     if errors:
         for error in errors:

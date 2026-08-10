@@ -38,9 +38,27 @@ class AgentPluginManifestsRequiredRule(Rule):
 
     def check(self, context: RepositoryContext) -> list[RuleViolation]:
         violations: list[RuleViolation] = []
+        codex_names = self._codex_marketplace_names(context)
         for plugin_dir in self._plugin_dirs(context):
-            violations.extend(self._check_plugin(plugin_dir))
+            violations.extend(self._check_plugin(plugin_dir, plugin_dir.name in codex_names))
         return violations
+
+    @staticmethod
+    def _codex_marketplace_names(context: RepositoryContext) -> set[str]:
+        marketplace_path = context.root_path / ".agents" / "plugins" / "marketplace.json"
+        if not marketplace_path.is_file():
+            return set()
+        try:
+            marketplace = json.loads(marketplace_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return set()
+        if not isinstance(marketplace, dict):
+            return set()
+        return {
+            entry["name"]
+            for entry in marketplace.get("plugins", [])
+            if isinstance(entry, dict) and isinstance(entry.get("name"), str)
+        }
 
     def _plugin_dirs(self, context: RepositoryContext) -> Iterable[Path]:
         marketplace_path = context.root_path / ".claude-plugin" / "marketplace.json"
@@ -65,13 +83,25 @@ class AgentPluginManifestsRequiredRule(Rule):
                     return sorted(set(paths))
         return sorted(node.path for node in context.lint_tree.find(PluginNode))
 
-    def _check_plugin(self, plugin_dir: Path) -> list[RuleViolation]:
+    def _check_plugin(self, plugin_dir: Path, codex_listed: bool) -> list[RuleViolation]:
         claude_path = plugin_dir / ".claude-plugin" / "plugin.json"
         codex_path = plugin_dir / ".codex-plugin" / "plugin.json"
         portable_path = plugin_dir / "plugin.json"
         violations: list[RuleViolation] = []
         if not claude_path.is_file():
             violations.append(self.violation("Missing Claude manifest at .claude-plugin/plugin.json", file_path=claude_path))
+        if not codex_listed:
+            # Claude-only plugin: it needs just the Claude manifest and must
+            # not carry Codex or Agent Plugins metadata.
+            for path, label in ((codex_path, "Codex"), (portable_path, "Agent Plugins")):
+                if path.is_file():
+                    violations.append(
+                        self.violation(
+                            f"{label} manifest present but plugin is not in the Codex marketplace",
+                            file_path=path,
+                        )
+                    )
+            return violations
         if not codex_path.is_file():
             violations.append(self.violation("Missing Codex manifest at .codex-plugin/plugin.json", file_path=codex_path))
         if not portable_path.is_file():
