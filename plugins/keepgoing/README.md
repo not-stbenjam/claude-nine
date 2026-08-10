@@ -4,6 +4,13 @@
 > ignores the `stop_hook_active` loop-breaker, so it keeps working (and
 > billing you) until you hit Escape or uninstall the plugin.
 
+<table>
+<tr>
+<td width="25%">
+<img src="assets/believe.png" alt="Clawd wearing headphones, singing: Don't stop believin'...">
+</td>
+<td width="75%">
+
 Never lets Claude stop. A `Stop` hook that rejects every attempt to end the
 turn with a simple instruction: keep going.
 
@@ -14,6 +21,10 @@ has. Guaranteed to work eventually.
 Combine with [hype](../hype/) for the ultimate scientific buddy: one hook
 that reminds Claude to believe in itself on every prompt, another that
 refuses to ever let it give up.
+
+</td>
+</tr>
+</table>
 
 This plugin is Claude Code-only. See the
 [main installation guide](../../README.md#installation) for setup.

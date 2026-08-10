@@ -3,7 +3,7 @@
 <table>
 <tr>
 <td width="25%">
-<img src="assets/clawd-hype.png" alt="Clawd, glowing with confidence, says: I GOT THIS!">
+<img src="assets/hype.png" alt="Clawd leaping with joy, saying: I GOT THIS!">
 </td>
 <td width="75%">
 
