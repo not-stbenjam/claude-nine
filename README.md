@@ -22,6 +22,7 @@ Shared skills and plugins for Claude Code and Codex by stbenjam.
 | --- | --- |
 | [books](plugins/books/) | Search and analyze a Calibre library or Goodreads export |
 | [hype](plugins/hype/) | Injects a random motivational hype message into every turn via a UserPromptSubmit hook. |
+| [keepgoing](plugins/keepgoing/) | A Stop hook that never lets Claude stop. Useful for solving unsolved math problems. |
 | [loops](plugins/loops/) | Autonomous loops that shepherd work to completion, such as driving a PR to a mergeable state |
 | [openclaw](plugins/openclaw/) | A grab-bag of miscellaneous OpenClaw skills (pollen forecasts, Orangetheory lookups, narrated video reels) with no unifying theme. |
 | [reviews](plugins/reviews/) | Multi-agent panel code review with specialist reviewers and runtime reproducers |

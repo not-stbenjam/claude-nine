@@ -39,6 +39,11 @@
       "name": "hype",
       "source": "./plugins/hype",
       "description": "Injects a random motivational hype message into every turn via a UserPromptSubmit hook."
+    },
+    {
+      "name": "keepgoing",
+      "source": "./plugins/keepgoing",
+      "description": "A Stop hook that never lets Claude stop. Useful for solving unsolved math problems."
     }
   ]
 }

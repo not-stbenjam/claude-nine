@@ -474,9 +474,35 @@ footer a { color: var(--primary); }
       "agents": [],
       "hooks": [
         {
+          "event_type": "PreToolUse",
+          "matcher": ".*",
+          "hooks_json": "[\n  {\n    \"command\": \"\\\"${CLAUDE_PLUGIN_ROOT}/hooks/hype.sh\\\" pretool\",\n    \"type\": \"command\"\n  }\n]"
+        },
+        {
           "event_type": "UserPromptSubmit",
           "matcher": ".*",
           "hooks_json": "[\n  {\n    \"command\": \"\\\"${CLAUDE_PLUGIN_ROOT}/hooks/hype.sh\\\"\",\n    \"type\": \"command\"\n  }\n]"
+        }
+      ],
+      "mcp_servers": [],
+      "rules": [],
+      "author": {
+        "name": "stbenjam"
+      }
+    },
+    {
+      "name": "keepgoing",
+      "description": "A Stop hook that never lets Claude stop. Useful for solving unsolved math problems.",
+      "version": "0.1.0",
+      "has_readme": true,
+      "commands": [],
+      "skills": [],
+      "agents": [],
+      "hooks": [
+        {
+          "event_type": "Stop",
+          "matcher": ".*",
+          "hooks_json": "[\n  {\n    \"command\": \"\\\"${CLAUDE_PLUGIN_ROOT}/hooks/keepgoing.sh\\\"\",\n    \"type\": \"command\"\n  }\n]"
         }
       ],
       "mcp_servers": [],

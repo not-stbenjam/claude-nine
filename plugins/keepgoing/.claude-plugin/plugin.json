@@ -1,0 +1,8 @@
+{
+  "name": "keepgoing",
+  "description": "A Stop hook that never lets Claude stop. Useful for solving unsolved math problems.",
+  "version": "0.1.0",
+  "author": {
+    "name": "stbenjam"
+  }
+}

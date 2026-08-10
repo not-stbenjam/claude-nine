@@ -1,6 +1,9 @@
 #!/bin/bash
-# UserPromptSubmit hook: prints one hype message to stdout, which Claude Code
-# injects as context for Claude on every turn.
+# Hype hook. Two modes:
+#   hype.sh          UserPromptSubmit: always prints a message; plain stdout
+#                    becomes context Claude sees.
+#   hype.sh pretool  PreToolUse: fires ~10% of the time; PreToolUse ignores
+#                    plain stdout, so context goes via hookSpecificOutput.
 
 MESSAGES=(
   "Believe in yourself!"
@@ -15,4 +18,12 @@ MESSAGES=(
   "Let's freaking go!"
 )
 
-printf '📣 %s\n' "${MESSAGES[RANDOM % ${#MESSAGES[@]}]}"
+MESSAGE="📣 ${MESSAGES[RANDOM % ${#MESSAGES[@]}]}"
+
+if [ "$1" = "pretool" ]; then
+  if [ $((RANDOM % 10)) -eq 0 ]; then
+    printf '{"hookSpecificOutput": {"hookEventName": "PreToolUse", "additionalContext": "%s"}}\n' "$MESSAGE"
+  fi
+else
+  printf '%s\n' "$MESSAGE"
+fi
