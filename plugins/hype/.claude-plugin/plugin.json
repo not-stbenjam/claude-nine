@@ -1,0 +1,8 @@
+{
+  "name": "hype",
+  "description": "Injects a random motivational hype message into every turn via a UserPromptSubmit hook.",
+  "version": "0.1.0",
+  "author": {
+    "name": "stbenjam"
+  }
+}

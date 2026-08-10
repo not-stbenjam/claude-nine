@@ -465,6 +465,34 @@ footer a { color: var(--primary); }
       }
     },
     {
+      "name": "hype",
+      "description": "Injects a random motivational hype message into every turn via a UserPromptSubmit hook.",
+      "version": "0.1.0",
+      "has_readme": true,
+      "commands": [],
+      "skills": [
+        {
+          "name": "hype",
+          "description": "Deliver an enthusiastic, over-the-top pep talk about the current work, celebrating progress and building momentum for what's next.",
+          "description_html": "Deliver an enthusiastic, over-the-top pep talk about the current work, celebrating progress and building momentum for what&#x27;s next.",
+          "meta": ""
+        }
+      ],
+      "agents": [],
+      "hooks": [
+        {
+          "event_type": "UserPromptSubmit",
+          "matcher": ".*",
+          "hooks_json": "[\n  {\n    \"command\": \"\\\"${CLAUDE_PLUGIN_ROOT}/hooks/hype.sh\\\"\",\n    \"type\": \"command\"\n  }\n]"
+        }
+      ],
+      "mcp_servers": [],
+      "rules": [],
+      "author": {
+        "name": "stbenjam"
+      }
+    },
+    {
       "name": "loops",
       "description": "Autonomous loops that shepherd work to completion, such as driving a PR to a mergeable state",
       "version": "0.0.3",

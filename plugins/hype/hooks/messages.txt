@@ -1,0 +1,13 @@
+# Default hype messages, one per line.
+# Copy this file to ~/.claude/hype-messages.txt (or point $HYPE_MESSAGES_FILE
+# at your own file) to customize.
+Believe in yourself!
+You got this!
+You're crushing it!
+Keep that momentum going!
+Nothing can stop you!
+Today is your day!
+Born ready for this!
+You make it look easy!
+Greatness awaits you!
+Let's freaking go!

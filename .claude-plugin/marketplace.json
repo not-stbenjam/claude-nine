@@ -34,6 +34,11 @@
       "name": "openclaw",
       "source": "./plugins/openclaw",
       "description": "A grab-bag of miscellaneous OpenClaw skills (pollen forecasts, Orangetheory lookups, narrated video reels) with no unifying theme."
+    },
+    {
+      "name": "hype",
+      "source": "./plugins/hype",
+      "description": "Injects a random motivational hype message into every turn via a UserPromptSubmit hook."
     }
   ]
 }
