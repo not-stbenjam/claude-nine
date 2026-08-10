@@ -1,5 +1,9 @@
 # keepgoing
 
+> ⚠️ Don't actually install this. Claude will literally never stop — it
+> ignores the `stop_hook_active` loop-breaker, so it keeps working (and
+> billing you) until you hit Escape or uninstall the plugin.
+
 Never lets Claude stop. A `Stop` hook that rejects every attempt to end the
 turn with a simple instruction: keep going.
 
@@ -20,7 +24,3 @@ Whenever Claude tries to finish its turn, the `Stop` hook
 ([`hooks/keepgoing.sh`](hooks/keepgoing.sh)) returns
 `{"decision": "block", "reason": ...}`, which rejects the stop and tells
 Claude to keep working.
-
-## ⚠️ Warning
-
-Don't actually install this.
