@@ -1,5 +1,7 @@
 # hype
 
+<img src="assets/clawd-hype.png" alt="Clawd, glowing with confidence, says: I GOT THIS!" width="480">
+
 A hype man for Claude Code. Injects a motivational message ("Believe in
 yourself!", "You got this!") into every turn via a `UserPromptSubmit` hook —
 and into about 10% of `PreToolUse` calls for good measure — so Claude never
