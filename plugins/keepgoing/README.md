@@ -18,6 +18,21 @@ refuses to ever let it give up.
 This plugin is Claude Code-only. See the
 [main installation guide](../../README.md#installation) for setup.
 
+## Customization
+
+Set `KEEPGOING_MESSAGES_FILE` to a text file of your own encouragement —
+one message per line; blank lines and `#` comments are ignored. Useful for
+tailoring the messages to the task at hand. Export it in the shell where
+you launch Claude Code, or set it per project in `.claude/settings.json`:
+
+```json
+{
+  "env": {
+    "KEEPGOING_MESSAGES_FILE": "./keepgoing-messages.txt"
+  }
+}
+```
+
 ## How it works
 
 Whenever Claude tries to finish its turn, the `Stop` hook

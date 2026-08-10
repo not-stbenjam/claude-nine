@@ -19,3 +19,17 @@ This plugin is Claude Code-only. In Claude Code, run:
 /plugin marketplace add stbenjam/skills
 /plugin install hype@stbenjam
 ```
+
+## Customization
+
+Set `HYPE_MESSAGES_FILE` to a text file of your own slogans — one per line;
+blank lines and `#` comments are ignored. Export it in the shell where you
+launch Claude Code, or set it per project in `.claude/settings.json`:
+
+```json
+{
+  "env": {
+    "HYPE_MESSAGES_FILE": "./hype-slogans.txt"
+  }
+}
+```

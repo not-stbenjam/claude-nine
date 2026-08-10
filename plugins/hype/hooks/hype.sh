@@ -4,6 +4,9 @@
 #                    becomes context Claude sees.
 #   hype.sh pretool  PreToolUse: fires ~10% of the time; PreToolUse ignores
 #                    plain stdout, so context goes via hookSpecificOutput.
+#
+# Set HYPE_MESSAGES_FILE to a text file (one message per line, blank lines
+# and # comments ignored) to replace the built-in messages.
 
 MESSAGES=(
   "Believe in yourself!"
@@ -18,11 +21,23 @@ MESSAGES=(
   "Let's freaking go!"
 )
 
+if [ -n "$HYPE_MESSAGES_FILE" ] && [ -f "$HYPE_MESSAGES_FILE" ]; then
+  CUSTOM=()
+  while IFS= read -r line; do
+    case "$line" in '' | \#*) continue ;; esac
+    CUSTOM+=("$line")
+  done < "$HYPE_MESSAGES_FILE"
+  if [ ${#CUSTOM[@]} -gt 0 ]; then
+    MESSAGES=("${CUSTOM[@]}")
+  fi
+fi
+
 MESSAGE="📣 ${MESSAGES[RANDOM % ${#MESSAGES[@]}]}"
 
 if [ "$1" = "pretool" ]; then
   if [ $((RANDOM % 10)) -eq 0 ]; then
-    printf '{"hookSpecificOutput": {"hookEventName": "PreToolUse", "additionalContext": "%s"}}\n' "$MESSAGE"
+    ESCAPED=$(printf '%s' "$MESSAGE" | sed 's/\\/\\\\/g; s/"/\\"/g')
+    printf '{"hookSpecificOutput": {"hookEventName": "PreToolUse", "additionalContext": "%s"}}\n' "$ESCAPED"
   fi
 else
   printf '%s\n' "$MESSAGE"

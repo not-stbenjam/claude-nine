@@ -1,7 +1,7 @@
 {
   "name": "hype",
   "description": "Injects a random motivational hype message into every turn via a UserPromptSubmit hook, plus about 10% of PreToolUse calls.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": {
     "name": "stbenjam"
   }
