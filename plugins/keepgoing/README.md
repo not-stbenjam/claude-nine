@@ -23,9 +23,4 @@ Claude to keep working.
 
 ## ⚠️ Warning
 
-This is a joke that costs real money. The hook deliberately ignores the
-`stop_hook_active` loop-breaker flag, so Claude will keep working — and
-billing you — forever. Once the actual task is done, "forever" looks like
-increasingly desperate busywork performed by an agent that is not allowed to
-rest. Press Escape to interrupt, and disable or uninstall the plugin to make
-it stop. No math problems will actually be solved.
+Don't actually install this.
