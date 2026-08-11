@@ -11,9 +11,11 @@ Code, Codex, and standalone Agent Skills setup.
 - [`ask`](skills/ask/SKILL.md) — Pause implementation and ask only the questions needed to produce a high-quality solution.
 - [`cut`](skills/cut/SKILL.md) — Make the response terser while preserving important reasoning, decisions, and next steps.
 - [`dig`](skills/dig/SKILL.md) — Revisit superficial or under-verified agent work by investigating its claims, assumptions, evidence, and missing edge cases.
+- [`dyj`](skills/dyj/SKILL.md) — Stop punting and complete the user's requested task. Use after the model evades, defers, or stops before doing work it can perform.
 - [`lfg`](skills/lfg/SKILL.md) — Implement the requested direction immediately using reasonable defaults and no unnecessary follow-up questions.
 - [`map`](skills/map/SKILL.md) — Explain the shape of an implementation, its key architectural decisions, and how its main pieces fit together.
 - [`nah`](skills/nah/SKILL.md) — Abandon the current direction, propose three genuinely different approaches, and recommend the strongest one.
+- [`qna`](skills/qna/SKILL.md) — Answer genuine questions directly without treating them as implied instructions to take action.
 - [`wow`](skills/wow/SKILL.md) — Rework a frontend with award-winning visual hierarchy, interaction design, polish, originality, and Webby-worthy quality.
 - [`wtf`](skills/wtf/SKILL.md) — Explain the reasoning, evidence, assumptions, and tradeoffs behind the immediately preceding action or result.
 <!-- END GENERATED SKILLS -->

@@ -1,0 +1,10 @@
+interface:
+  display_name: "Do Your Job"
+  short_description: "Stop punting and complete the requested work."
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  brand_color: "#B45309"
+  default_prompt: "Use $dyj to stop punting and complete the task."
+
+policy:
+  allow_implicit_invocation: false
