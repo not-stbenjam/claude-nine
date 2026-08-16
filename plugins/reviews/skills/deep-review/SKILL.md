@@ -60,18 +60,19 @@ All are enabled unless excluded with `-`:
 | **consistency** | Duplicate helpers, convention drift, style match with existing code | No |
 | **qa** | Test coverage gaps, missing edge-case tests, concrete test suggestions | No |
 | **writer** | Documentation accuracy, staleness, consistency with code changes | No |
+| **slopinator** | Review-history residue and generated-sounding prose in shipped text | No |
 
 ### Routing Topology
 
 ```text
-  bugs  adversarial  security  architecture  consistency  qa  writer
-    \_______|__________|__________|___________|___________|____|
-                                 |
-                           [reproduce]  ← bug/security findings only
-                                 |
-                                 v
-                           panel-arbiter
-                         (final call)
+  bugs  adversarial  security  architecture  consistency  qa  writer  slopinator
+    \_______|__________|__________|___________|___________|_____|_______/
+                                  |
+                            [reproduce]  ← bug/security findings only
+                                  |
+                                  v
+                            panel-arbiter
+                          (final call)
 ```
 
 - Specialists raise findings independently — no implicit consensus.
@@ -134,6 +135,7 @@ JSON schema, parallel/serial modes, and external reviewers are in
 | consistency | [references/specialists/consistency.md](references/specialists/consistency.md) |
 | qa | [references/specialists/qa.md](references/specialists/qa.md) |
 | writer | [references/specialists/writer.md](references/specialists/writer.md) |
+| slopinator | [references/specialists/slopinator.md](references/specialists/slopinator.md) |
 
 ### Phase 3 — Completeness Gate
 
@@ -191,7 +193,8 @@ A change passes when: no unresolved functional bugs, no unrefuted
 adversarial scenarios, no unmitigated vulnerabilities or supply
 chain risks, sound architecture, no duplicate helpers, adequate
 test coverage, documentation consistent with changes, and the
-panel arbiter has ratified the disposition.
+shipped text is free of review residue and generated-sounding
+prose, and the panel arbiter has ratified the disposition.
 
 ## Error Handling
 
