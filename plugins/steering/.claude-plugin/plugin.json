@@ -1,6 +1,6 @@
 {
   "name": "steering",
-  "description": "Compact conversation-steering skills for changing direction, explaining decisions, asking for clarity, answering questions without implied action, finishing punted work, tightening prose, executing decisively, and raising frontend quality.",
+  "description": "Compact conversation-steering skills for changing direction, explaining decisions, asking for clarity, answering questions without implied action, finishing punted work, delegating research to a subagent, tightening prose, executing decisively, and raising frontend quality.",
   "version": "0.1.0",
   "author": {
     "name": "stbenjam"

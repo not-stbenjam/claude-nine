@@ -1,0 +1,10 @@
+interface:
+  display_name: "Let Me Know"
+  short_description: "Send a subagent to research and report back."
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  brand_color: "#0E7490"
+  default_prompt: "Use $lmk to research this with a subagent and report back."
+
+policy:
+  allow_implicit_invocation: false

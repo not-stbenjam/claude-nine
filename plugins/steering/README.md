@@ -13,6 +13,7 @@ Code, Codex, and standalone Agent Skills setup.
 - [`dig`](skills/dig/SKILL.md) — Revisit superficial or under-verified agent work by investigating its claims, assumptions, evidence, and missing edge cases.
 - [`dyj`](skills/dyj/SKILL.md) — Stop punting and complete the user's requested task. Use after the model evades, defers, or stops before doing work it can perform.
 - [`lfg`](skills/lfg/SKILL.md) — Implement the requested direction immediately using reasonable defaults and no unnecessary follow-up questions.
+- [`lmk`](skills/lmk/SKILL.md) — Spawn a subagent to perform the research task, then report back with the answer.
 - [`map`](skills/map/SKILL.md) — Explain the shape of an implementation, its key architectural decisions, and how its main pieces fit together.
 - [`nah`](skills/nah/SKILL.md) — Abandon the current direction, propose three genuinely different approaches, and recommend the strongest one.
 - [`qna`](skills/qna/SKILL.md) — Answer genuine questions directly without treating them as implied instructions to take action.
