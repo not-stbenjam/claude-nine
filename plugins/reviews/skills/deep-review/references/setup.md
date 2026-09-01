@@ -59,7 +59,7 @@ MERGE_BASE=$(git merge-base "$BASE_REMOTE/$BASE_BRANCH" HEAD)
 
 If no base ref can be determined, error and exit.
 
-## Step 1.4: Detect prior reviews (PR/MR only)
+## Step 1.4: Detect prior reviews and determine the round
 
 **GitHub:**
 ```bash
@@ -80,3 +80,9 @@ to all specialists and the arbiter as context. Specialists should:
 - Flag prior findings that remain unresolved
 - Avoid re-raising issues that were already noted and resolved
 - Call out any regressions — issues that were fixed but reappeared
+
+After collecting this context, read
+[iterative-reviews.md](iterative-reviews.md) to determine the review round,
+threshold multiplier, carried blockers, and new candidates. For a local branch
+without review history, use explicit round context supplied by the user; if
+none was supplied, treat the invocation as round 1.
