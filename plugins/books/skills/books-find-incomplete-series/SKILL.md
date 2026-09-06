@@ -1,6 +1,6 @@
 ---
 name: books-find-incomplete-series
-description: Find incomplete series in a Calibre library and identify the next book to read in each series.
+description: Find incomplete series in a Calibre library and identify the next book to read in each series. Use when asked which book series are incomplete.
 user-invocable: false
 ---
 

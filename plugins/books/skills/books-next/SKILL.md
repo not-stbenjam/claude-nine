@@ -1,6 +1,6 @@
 ---
 name: books-next
-description: Analyze reading patterns and recommend what to read next from a Calibre library or Goodreads export.
+description: Analyze reading patterns and recommend what to read next from a Calibre library or Goodreads export. Use when asked what to read next.
 user-invocable: true
 ---
 

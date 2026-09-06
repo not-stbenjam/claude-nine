@@ -1,6 +1,6 @@
 ---
 name: books-acquirer
-description: Acquire named books via library borrow/hold/download first, then explicit retailer purchase; use for get, hold, borrow, buy, or EPUB requests.
+description: Acquire named books via library borrow/hold/download first, then explicit retailer purchase. Use when asked to get, hold, borrow, buy, or download an EPUB book.
 user-invocable: true
 ---
 

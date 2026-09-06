@@ -1,6 +1,6 @@
 ---
 name: books-release-scout
-description: Read-only new-release book recommendations from Calibre ratings with current library availability and retailer pricing; use for book scouting.
+description: Read-only new-release book recommendations from Calibre ratings with current library availability and retailer pricing. Use when asked to scout for new books to read or buy.
 user-invocable: true
 ---
 

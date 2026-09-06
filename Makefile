@@ -1,6 +1,6 @@
 # Makefile for Claude Code and Codex plugins
 
-SKILLSAW_VERSION := 0.18.0
+SKILLSAW_VERSION := 0.20.0
 CODEX_MARKETPLACE := .agents/plugins/marketplace.json
 
 .PHONY: help
@@ -9,12 +9,16 @@ help: ## Show this help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
 .PHONY: lint
-lint: ## Lint plugins and skills with skillsaw (strict mode)
+lint: badge ## Lint plugins and skills with skillsaw (strict mode)
 	uvx skillsaw==$(SKILLSAW_VERSION) --strict
 
 .PHONY: lint-fix
 lint-fix: ## Apply skillsaw autofixes
 	uvx skillsaw==$(SKILLSAW_VERSION) fix
+
+.PHONY: badge
+badge: ## Generate the skillsaw grade badge and report card
+	uvx skillsaw==$(SKILLSAW_VERSION) badge --large
 
 .PHONY: docs
 docs: ## Generate plugin/skill documentation to docs/index.html

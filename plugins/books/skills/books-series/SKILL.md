@@ -1,6 +1,6 @@
 ---
 name: books-series
-description: List unfinished book series and the next unread book from a Calibre library or Goodreads export.
+description: List unfinished book series and the next unread book from a Calibre library or Goodreads export. Use when asked about unfinished series or the next unread book.
 user-invocable: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: "make-a-movie"
-description: "Create dynamic, narrated, music-backed, friend-shareable reels with polished motion and audio mixing."
+description: "Create dynamic, narrated, music-backed, friend-shareable reels with polished motion and audio mixing. Use when asked to make a short narrated video or social reel from structured content."
 ---
 
 # Make A Movie

@@ -1,6 +1,6 @@
 ---
 name: books-stats
-description: Show reading statistics from a Calibre library or Goodreads export, including pace, pages, ratings, authors, series, and TBR.
+description: Show reading statistics from a Calibre library or Goodreads export, including pace, pages, ratings, authors, series, and TBR. Use when asked for reading statistics or habits.
 user-invocable: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: books-random
-description: Pick a random book from a Calibre library or Goodreads export, honoring the user's requested pool and filters.
+description: Pick a random book from a Calibre library or Goodreads export, honoring the user's requested pool and filters. Use when asked to choose a random book.
 user-invocable: true
 ---
 

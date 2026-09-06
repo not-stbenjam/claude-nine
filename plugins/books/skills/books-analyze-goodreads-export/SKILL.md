@@ -1,6 +1,6 @@
 ---
 name: books-analyze-goodreads-export
-description: Load and query a Goodreads CSV export as the Goodreads backend for the books-library skill.
+description: Load and query a Goodreads CSV export as the Goodreads backend for the books-library skill. Use when the books-library skill selects a Goodreads export as its data source.
 user-invocable: false
 ---
 

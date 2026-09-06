@@ -1,6 +1,6 @@
 ---
 name: books-vibes
-description: Find books with similar authors, series, themes, shelves, length, or ratings in a Calibre library or Goodreads export.
+description: Find books with similar authors, series, themes, shelves, length, or ratings in a Calibre library or Goodreads export. Use when asked for similar-book recommendations.
 user-invocable: true
 ---
 
