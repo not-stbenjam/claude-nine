@@ -27,6 +27,10 @@ Append this schema to each specialist prompt:
 
 If no issues found, return an empty array and state what was checked.
 
+Specialist severity rules describe the round 1 baseline. On later rounds, the
+[iterative review policy](iterative-reviews.md) takes precedence for every new
+BLOCKING classification; unresolved carried blockers retain their severity.
+
 ## Prompt path resolution
 
 Resolve specialist prompts from the skill directory (repository
@@ -49,6 +53,10 @@ Each sub-agent gets:
 - The merge base ref
 - The PR number or branch name being reviewed
 - Any prior review findings (if detected in Step 1.4)
+- The current review round and threshold multiplier from the
+  [iterative review policy](iterative-reviews.md), including which prior
+  blockers carry forward and that the multiplier applies only to new BLOCKING
+  findings
 - The findings JSON schema above
 
 Sub-agents have full read access to the locally checked-out
@@ -72,6 +80,10 @@ as a heading, read
 for review instructions, review through that lens, and produce
 findings in the same JSON format. Context from earlier specialists'
 file reads and findings carries over automatically.
+
+Before the first specialist, read the
+[iterative review policy](iterative-reviews.md) and apply the current round's
+threshold consistently to every specialist's severity classification.
 
 **Do NOT modify any files, and do NOT push to any remote.** Serial
 mode is read-only, same as parallel.
