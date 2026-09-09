@@ -9,17 +9,17 @@ Code, Codex, and standalone Agent Skills setup.
 ## Skills
 
 <!-- BEGIN GENERATED SKILLS -->
-- [`books-acquirer`](skills/books-acquirer/SKILL.md) — Acquire named books via library borrow/hold/download first, then explicit retailer purchase; use for get, hold, borrow, buy, or EPUB requests.
-- [`books-analyze-goodreads-export`](skills/books-analyze-goodreads-export/SKILL.md) — Load and query a Goodreads CSV export as the Goodreads backend for the books-library skill.
-- [`books-calibre`](skills/books-calibre/SKILL.md) — Supporting Calibre backend for the books-library skill; use it after that skill selects Calibre as the data source.
-- [`books-find-incomplete-series`](skills/books-find-incomplete-series/SKILL.md) — Find incomplete series in a Calibre library and identify the next book to read in each series.
-- [`books-library`](skills/books-library/SKILL.md) — Search, analyze, and recommend books from either a Calibre library or a Goodreads CSV export.
-- [`books-next`](skills/books-next/SKILL.md) — Analyze reading patterns and recommend what to read next from a Calibre library or Goodreads export.
-- [`books-random`](skills/books-random/SKILL.md) — Pick a random book from a Calibre library or Goodreads export, honoring the user's requested pool and filters.
-- [`books-release-scout`](skills/books-release-scout/SKILL.md) — Read-only new-release book recommendations from Calibre ratings with current library availability and retailer pricing; use for book scouting.
-- [`books-series`](skills/books-series/SKILL.md) — List unfinished book series and the next unread book from a Calibre library or Goodreads export.
-- [`books-stats`](skills/books-stats/SKILL.md) — Show reading statistics from a Calibre library or Goodreads export, including pace, pages, ratings, authors, series, and TBR.
-- [`books-vibes`](skills/books-vibes/SKILL.md) — Find books with similar authors, series, themes, shelves, length, or ratings in a Calibre library or Goodreads export.
+- [`books-acquirer`](skills/books-acquirer/SKILL.md) — Acquire named books via library borrow/hold/download first, then explicit retailer purchase. Use when asked to get, hold, borrow, buy, or download an EPUB book.
+- [`books-analyze-goodreads-export`](skills/books-analyze-goodreads-export/SKILL.md) — Load and query a Goodreads CSV export as the Goodreads backend for the books-library skill. Use when the books-library skill selects a Goodreads export as its data source.
+- [`books-calibre`](skills/books-calibre/SKILL.md) — Supporting Calibre backend for the books-library skill. Use when the books-library skill selects Calibre as the data source.
+- [`books-find-incomplete-series`](skills/books-find-incomplete-series/SKILL.md) — Find incomplete series in a Calibre library and identify the next book to read in each series. Use when asked which book series are incomplete.
+- [`books-library`](skills/books-library/SKILL.md) — Search, analyze, and recommend books from either a Calibre library or a Goodreads CSV export. Use when asked about books in either library.
+- [`books-next`](skills/books-next/SKILL.md) — Analyze reading patterns and recommend what to read next from a Calibre library or Goodreads export. Use when asked what to read next.
+- [`books-random`](skills/books-random/SKILL.md) — Pick a random book from a Calibre library or Goodreads export, honoring the user's requested pool and filters. Use when asked to choose a random book.
+- [`books-release-scout`](skills/books-release-scout/SKILL.md) — Read-only new-release book recommendations from Calibre ratings with current library availability and retailer pricing. Use when asked to scout for new books to read or buy.
+- [`books-series`](skills/books-series/SKILL.md) — List unfinished book series and the next unread book from a Calibre library or Goodreads export. Use when asked about unfinished series or the next unread book.
+- [`books-stats`](skills/books-stats/SKILL.md) — Show reading statistics from a Calibre library or Goodreads export, including pace, pages, ratings, authors, series, and TBR. Use when asked for reading statistics or habits.
+- [`books-vibes`](skills/books-vibes/SKILL.md) — Find books with similar authors, series, themes, shelves, length, or ratings in a Calibre library or Goodreads export. Use when asked for similar-book recommendations.
 <!-- END GENERATED SKILLS -->
 
 ## Skill routing

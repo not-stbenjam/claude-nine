@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "steering",
   "version": "0.1.0",
-  "description": "Compact conversation-steering skills for changing direction, explaining decisions, asking for clarity, answering questions without implied action, finishing punted work, delegating research to a subagent, tightening prose, executing decisively, and raising frontend quality.",
+  "description": "Compact conversation-steering skills for changing direction, explaining decisions, asking for clarity, answering questions without implied action, finishing punted work, delegating research to a subagent, tightening prose, executing decisively, rethinking code architecture, and raising frontend quality.",
   "author": {
     "name": "stbenjam"
   }

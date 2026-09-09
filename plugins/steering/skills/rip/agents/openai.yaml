@@ -1,0 +1,4 @@
+interface:
+  display_name: "RIP"
+  short_description: "Rethink, improve, and prune existing code."
+  default_prompt: "Use $rip to rethink this code's architecture, improve its maintainability, and prune unnecessary complexity."

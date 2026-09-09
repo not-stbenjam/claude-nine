@@ -17,6 +17,7 @@ Code, Codex, and standalone Agent Skills setup.
 - [`map`](skills/map/SKILL.md) — Explain the shape of an implementation, its key architectural decisions, and how its main pieces fit together.
 - [`nah`](skills/nah/SKILL.md) — Abandon the current direction, propose three genuinely different approaches, and recommend the strongest one.
 - [`qna`](skills/qna/SKILL.md) — Answer genuine questions directly without treating them as implied instructions to take action.
+- [`rip`](skills/rip/SKILL.md) — RIP — Rethink, Improve, Prune. Use when asked to rethink existing code and improve its architecture for lasting maintainability.
 - [`wow`](skills/wow/SKILL.md) — Rework a frontend with award-winning visual hierarchy, interaction design, polish, originality, and Webby-worthy quality.
 - [`wtf`](skills/wtf/SKILL.md) — Explain the reasoning, evidence, assumptions, and tradeoffs behind the immediately preceding action or result.
 <!-- END GENERATED SKILLS -->

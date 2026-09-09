@@ -12,7 +12,7 @@ Code, Codex, and standalone Agent Skills setup.
 ## Skills
 
 <!-- BEGIN GENERATED SKILLS -->
-- [`make-a-movie`](skills/make-a-movie/SKILL.md) — Create dynamic, narrated, music-backed, friend-shareable reels with polished motion and audio mixing.
+- [`make-a-movie`](skills/make-a-movie/SKILL.md) — Create dynamic, narrated, music-backed, friend-shareable reels with polished motion and audio mixing. Use when asked to make a short narrated video or social reel from structured content.
 - [`orangetheory-workout`](skills/orangetheory-workout/SKILL.md) — Look up Orangetheory Fitness daily workout summaries. Use when asked about today's or tomorrow's Orangetheory, OTF, or orange theory workout.
 - [`pollen-counts`](skills/pollen-counts/SKILL.md) — Get current and forecast pollen counts for a US ZIP code. Use when asked about pollen, allergens, or allergy/pollen forecasts for a US location.
 <!-- END GENERATED SKILLS -->

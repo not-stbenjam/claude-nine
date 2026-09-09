@@ -8,7 +8,7 @@ Code, Codex, and standalone Agent Skills setup.
 ## Skills
 
 <!-- BEGIN GENERATED SKILLS -->
-- [`pr-loop`](skills/pr-loop/SKILL.md) — Shepherd a PR: merge base branch, fix CI, address review comments, resolve threads, and monitor until merged.
+- [`pr-loop`](skills/pr-loop/SKILL.md) — Shepherd a PR: merge base branch, fix CI, address review comments, resolve threads, and monitor until merged. Use when asked to drive a pull request through to merge.
 <!-- END GENERATED SKILLS -->
 
 ## Usage
