@@ -1,9 +1,5 @@
 # keepgoing
 
-> ⚠️ Don't actually install this. Claude will literally never stop — it
-> ignores the `stop_hook_active` loop-breaker, so it keeps working (and
-> billing you) until you hit Escape or uninstall the plugin.
-
 <table>
 <tr>
 <td width="25%">
@@ -11,12 +7,12 @@
 </td>
 <td width="75%">
 
-Never lets Claude stop. A `Stop` hook that rejects every attempt to end the
-turn with a simple instruction: keep going.
+Gives Claude Code or Codex one last chance to finish required follow-through
+before ending a turn. By default it runs once, then honors the
+`stop_hook_active` loop breaker so the agent can stop normally.
 
-Particularly useful for solving unsolved math problems: ask Claude to prove
-the Riemann Hypothesis, and this plugin ensures it does not stop until it
-has. Guaranteed to work eventually.
+For experiments that truly need relentless continuation, infinite mode keeps
+rejecting every stop until you interrupt the agent. It is deliberately opt-in.
 
 Combine with [hype](../hype/) for the ultimate scientific buddy: one hook
 that reminds Claude to believe in itself on every prompt, another that
@@ -26,15 +22,34 @@ refuses to ever let it give up.
 </tr>
 </table>
 
-This plugin is Claude Code-only. See the
-[main installation guide](../../README.md#installation) for setup.
+See the [main installation guide](../../README.md#installation) for Claude
+Code and Codex setup. Codex requires you to review and trust the plugin hook
+before it will run.
 
 ## Customization
 
+### Infinite mode
+
+Set `KEEPGOING_INFINITE=1` in the environment where you launch Claude Code or
+Codex. Infinite mode ignores the loop breaker and can keep consuming tokens
+until you interrupt the agent, so it should be enabled only intentionally.
+
+For Claude Code, it can also be set per project:
+
+```json
+{
+  "env": {
+    "KEEPGOING_INFINITE": "1"
+  }
+}
+```
+
+### Completion messages
+
 Set `KEEPGOING_MESSAGES_FILE` to a text file of your own encouragement —
 one message per line; blank lines and `#` comments are ignored. Useful for
-tailoring the messages to the task at hand. Export it in the shell where
-you launch Claude Code, or set it per project in `.claude/settings.json`:
+tailoring the completion check to the task at hand. Export it in the shell
+where you launch your agent, or set it per project in `.claude/settings.json`:
 
 ```json
 {
@@ -46,7 +61,11 @@ you launch Claude Code, or set it per project in `.claude/settings.json`:
 
 ## How it works
 
-Whenever Claude tries to finish its turn, the `Stop` hook
-([`hooks/keepgoing.sh`](hooks/keepgoing.sh)) returns
-`{"decision": "block", "reason": ...}`, which rejects the stop and tells
-Claude to keep working.
+Whenever the agent first tries to finish its turn, the `Stop` hook
+([`hooks/keepgoing.py`](hooks/keepgoing.py)) returns
+`{"decision": "block", "reason": ...}`. The agent receives that reason as a
+continuation prompt. When it stops again, the hook sees
+`stop_hook_active: true` and allows the turn to end unless infinite mode is on.
+
+Codex supplies the same `CLAUDE_PLUGIN_ROOT` compatibility variable used by
+Claude Code, so both clients run the same hook definition and Python script.

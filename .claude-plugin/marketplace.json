@@ -43,7 +43,7 @@
     {
       "name": "keepgoing",
       "source": "./plugins/keepgoing",
-      "description": "A Stop hook that never lets Claude stop. Useful for solving unsolved math problems."
+      "description": "A Stop hook for Claude Code and Codex that requests one final completion pass, with an opt-in infinite mode."
     }
   ]
 }

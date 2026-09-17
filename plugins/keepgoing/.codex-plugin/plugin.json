@@ -1,0 +1,19 @@
+{
+  "name": "keepgoing",
+  "version": "0.3.0",
+  "description": "A Stop hook for Claude Code and Codex that requests one final completion pass, with an opt-in infinite mode.",
+  "author": {
+    "name": "stbenjam"
+  },
+  "interface": {
+    "displayName": "Keep Going",
+    "shortDescription": "Request one final completion pass before stopping.",
+    "longDescription": "Ask Claude Code or Codex to check for unfinished work once before stopping, with an explicitly enabled infinite mode for experiments.",
+    "developerName": "stbenjam",
+    "category": "Productivity",
+    "capabilities": [
+      "Hooks"
+    ],
+    "defaultPrompt": "Explain how the keepgoing completion hook works and how to configure it."
+  }
+}
