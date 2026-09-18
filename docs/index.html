@@ -492,8 +492,8 @@ footer a { color: var(--primary); }
     },
     {
       "name": "keepgoing",
-      "description": "A Stop hook that never lets Claude stop. Useful for solving unsolved math problems.",
-      "version": "0.2.0",
+      "description": "A Stop hook for Claude Code and Codex that requests one final completion pass, with an opt-in infinite mode.",
+      "version": "0.3.0",
       "has_readme": true,
       "commands": [],
       "skills": [],
@@ -502,7 +502,7 @@ footer a { color: var(--primary); }
         {
           "event_type": "Stop",
           "matcher": ".*",
-          "hooks_json": "[\n  {\n    \"command\": \"\\\"${CLAUDE_PLUGIN_ROOT}/hooks/keepgoing.sh\\\"\",\n    \"type\": \"command\"\n  }\n]"
+          "hooks_json": "[\n  {\n    \"command\": \"python3 \\\"${CLAUDE_PLUGIN_ROOT}/hooks/keepgoing.py\\\"\",\n    \"timeout\": 5,\n    \"type\": \"command\"\n  }\n]"
         }
       ],
       "mcp_servers": [],

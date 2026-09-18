@@ -5,7 +5,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/keepgoing.sh\""
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/keepgoing.py\"",
+            "timeout": 5
           }
         ]
       }
