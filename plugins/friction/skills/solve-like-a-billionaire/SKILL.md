@@ -5,6 +5,8 @@ license: MIT
 metadata:
   author: stbenjam
   version: "0.1.0"
+user-invocable: true
+disable-model-invocation: true
 ---
 
 # Solve Like a Billionaire

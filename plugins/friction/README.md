@@ -10,6 +10,9 @@ assistant, or local service. It then carries the solution through as far as the
 user's authority allows. This is proactive authority: execute authorized work
 without punting, pausing, stopping, or asking the user to reconfirm permission.
 
+The skill requires explicit invocation; automatic model invocation is disabled
+in Claude Code and Codex.
+
 This is inspired by Jeffrey Lind's
 [Billionairebot](https://grokbot.dev/marketplace/billionairebot/), which reframes
 dreaded chores by asking how someone with abundant resources would offload
