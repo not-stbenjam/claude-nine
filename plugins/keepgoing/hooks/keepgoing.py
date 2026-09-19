@@ -13,10 +13,10 @@ from typing import Any
 
 DEFAULT_REASONS = (
     "Before stopping, check that you've fully handled my request and any necessary "
-    "follow-through, including ensuring all booked events are on my calendar and "
-    "all specific requests have been carried out. If I ask, 'Did you do...?', that "
-    "is often a request to actually do the work; if so, do it. Finish what you can "
-    "within your permissions; if something needs my input, tell me clearly.",
+    "follow-through, including ensuring all specific requests have been carried "
+    "out. If I ask, 'Did you do...?', that is often a request to actually do the "
+    "work; if so, do it. Finish what you can within your permissions; if something "
+    "needs my input, tell me clearly.",
 )
 TRUTHY = {"1", "true", "yes", "on"}
 

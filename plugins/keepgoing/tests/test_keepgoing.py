@@ -23,7 +23,6 @@ class KeepGoingTests(unittest.TestCase):
         )
         self.assertEqual(result["decision"], "block")
         self.assertTrue(result["reason"])
-        self.assertIn("all booked events", result["reason"])
         self.assertIn("Did you do...?", result["reason"])
 
     def test_default_mode_does_not_recurse(self) -> None:
