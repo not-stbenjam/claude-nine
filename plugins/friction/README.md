@@ -2,11 +2,13 @@
 
 Make annoying work disappear.
 
-The `solve` skill treats time and attention as scarce resources. It looks past
-the default do-it-yourself answer and finds a practical way to finish the job:
+The `solve-like-a-billionaire` skill treats time and attention as scarce
+resources. It looks past the default do-it-yourself answer and finds a practical
+way to finish the job:
 do it directly, automate it, or hire the right specialist, concierge, courier,
 assistant, or local service. It then carries the solution through as far as the
-user's authority allows.
+user's authority allows. This is proactive authority: execute authorized work
+without punting, pausing, stopping, or asking the user to reconfirm permission.
 
 This is inspired by Jeffrey Lind's
 [Billionairebot](https://grokbot.dev/marketplace/billionairebot/), which reframes
@@ -20,7 +22,7 @@ Codex, and standalone Agent Skills setup.
 ## Skills
 
 <!-- BEGIN GENERATED SKILLS -->
-- [`solve`](skills/solve/SKILL.md) — Eliminate real-world friction end to end through direct action, paid delegation, specialist services, or automation. Use when the user wants an annoying chore, errand, logistical problem, or recurring burden handled rather than merely explained.
+- [`solve-like-a-billionaire`](skills/solve-like-a-billionaire/SKILL.md) — Eliminate real-world friction end to end through direct action, paid delegation, specialist services, or automation. Use when the user wants an annoying chore, errand, logistical problem, or recurring burden handled rather than merely explained.
 <!-- END GENERATED SKILLS -->
 
 ## Standing authorizations
@@ -51,6 +53,7 @@ Example:
   providers unless another authorization explicitly allows it.
 ```
 
-Write boundaries that are specific enough to audit. If the file is absent or a
-needed action is outside its limits, the skill prepares everything it safely can
+Write boundaries that are specific enough to audit. If the file is absent, the
+skill proceeds using the current request and any other existing approvals. When
+a needed action exceeds the available authority, it prepares everything it can
 and asks for the smallest missing approval at the final boundary.

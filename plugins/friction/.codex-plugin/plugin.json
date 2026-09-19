@@ -13,6 +13,6 @@
     "developerName": "stbenjam",
     "category": "Productivity",
     "capabilities": [],
-    "defaultPrompt": "Use $solve to make this problem disappear with the least effort from me."
+    "defaultPrompt": "Use $solve-like-a-billionaire to make this problem disappear with the least effort from me."
   }
 }
